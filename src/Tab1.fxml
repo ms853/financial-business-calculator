@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Light.Spot?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bg" stylesheets="@../images/application.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="assignment1.tab1Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#clickClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#f5f4f4" strokeType="OUTSIDE" strokeWidth="0.0" text="Financial Investment Calculation" underline="true">
+               <font>
+                  <Font name="Agency FB Bold" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="40.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <HBox prefHeight="54.0" prefWidth="600.0">
+               <children>
+                  <Text fill="#f20101" strokeType="OUTSIDE" strokeWidth="0.0" text="Number of Years">
+                     <HBox.margin>
+                        <Insets left="20.0" right="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Agency FB Bold" size="22.0" />
+                     </font>
+                     <effect>
+                        <Lighting bumpInput="$null" diffuseConstant="1.72" specularConstant="0.0" specularExponent="40.0" surfaceScale="10.0">
+                           <light>
+                              <Light.Spot color="#070707" />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </Text>
+                  <TextField fx:id="numberOf" promptText="Enter number of years" />
+                  <Button fx:id="mainMenu" mnemonicParsing="false" onAction="#goBack" text="Main Menu">
+                     <HBox.margin>
+                        <Insets left="160.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial Bold" size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox prefHeight="128.0" prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Amount ">
+                           <HBox.margin>
+                              <Insets left="20.0" right="35.0" top="40.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </Text>
+                        <TextField fx:id="amount_Invested" promptText="Enter the amount ">
+                           <HBox.margin>
+                              <Insets left="35.0" top="40.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox prefHeight="71.0" prefWidth="600.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Annual Interest  %">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Agency FB Bold" size="22.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="annualInterest" promptText="Enter Interest Rate">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="66.0" prefWidth="600.0">
+                           <children>
+                              <Button fx:id="presentValue" mnemonicParsing="false" onAction="#calculatePresentValue" prefHeight="25.0" prefWidth="103.0" text="Present Value ">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Text fx:id="presentResult" strokeType="OUTSIDE" strokeWidth="0.0" text="Result for Present Value is:">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="futureValue" mnemonicParsing="false" onAction="#calculateFutureValue" prefHeight="25.0" prefWidth="103.0" text="Future Value">
+                                 <font>
+                                    <Font name="Arial Bold" size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Text fx:id="futureResult" strokeType="OUTSIDE" strokeWidth="0.0" text="Result for Future Value is: ">
+                                 <font>
+                                    <Font name="Arial Black" size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

@@ -1,0 +1,17 @@
+/*. backgd {
+	-fx-background-color: #cc0000;
+	-fx-background-image:url(images\financial.jpg);
+}*/
+. Text {
+	-fx-background-color: #660000;
+	-fx-text-fill: #333333;
+}
+
+. bg{
+	-fx-background-image: url('../images/financial.jpg');
+    -fx-background-color: #cccccc;
+}
+. containerbg{
+	
+    -fx-background-color: #cccccc;
+}
